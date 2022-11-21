@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Capsone-Design</title>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css'>
+  <link rel="stylesheet" href="static/style.css">
+
+</head>
+
+<body>
+    <div class="showcase">
+        <!--입력 창이랑 버튼 하나만들어줘-->
+        <form action="/your-name/" method="post">
+            <label for="your_name">Your name:<label>
+            <input id="your_name" type="text" name="your_name" value="{{current_name}}">
+            <input type="submit" value="OK">
+        </form>
+      
+    </div>
+
+            <!-- <footer class="footer">
+                <p>Questions? Call 010-XXXX-2672</p>
+                <div class="footer-cols">
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="#">Ways To Watch</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Terms Of Use</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Redeem Gift Cards</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+            </footer>
+            <script  src="./script.js"></script> -->
+    <!-- partial -->
+
+
+</body>
+</html>
