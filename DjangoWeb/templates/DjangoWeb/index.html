@@ -12,12 +12,17 @@
 <body>
     <div class="showcase">
         <!--입력 창이랑 버튼 하나만들어줘-->
-        <form action="/your-name/" method="post">
+    
+        <form action="." method="post">
+            {% csrf_token %}
             <label for="your_name">Your name:<label>
             <input id="your_name" type="text" name="your_name" value="{{current_name}}">
-            <input type="submit" value="OK">
+            <input type="submit" value="OK" name="OK">
+            <p> aaasdasd{{name}} </p>
         </form>
-      
+
+        {% comment %}send text to django request 'get' {% endcomment %}
+
     </div>
 
             <!-- <footer class="footer">

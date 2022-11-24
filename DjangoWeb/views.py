@@ -1,17 +1,16 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
-from .models import Student
+#from capstone_konlpy import sentiment_predict
 
 def index(request):
-    return render(request, 'DjangoWeb/index.html')
-
-def createform(request):
-
-    if request.method == 'POST':
-        std = Student()
-        std.studentID = request.POST['studentID']
-        std.name = request.POST['name']
-        std.major = request.POST['major']
-        std.save()
-
-    return redirect('home')
+    if request.method == "POST":
+        name = request.POST.get("your_name")
+        print(name)
+        # capstone_konlpy.py에서 sentiment_predict() 함수를 호출하여 감성분석 결과를 출력
+        #sentiment_predict(name)
+        
+        
+        return render(request, "DjangoWeb\index.html", {"name": name})
+    elif request.method == "GET":
+        print('Case 3')
+        return render(request, 'DjangoWeb\index.html')
