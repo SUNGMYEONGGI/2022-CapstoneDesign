@@ -42,12 +42,16 @@ def sentiment_predict(sentence):
     predictions = model.predict(pad_new)
     predictions = float(predictions.squeeze(-1)[1])
 
+    emogoodurl = "https://www.youtube.com/results?search_query=%EA%B8%B0%EB%B6%84%EC%A2%8B%EC%9D%80+%EB%85%B8%EB%9E%98"
+    emobadurl = "https://www.youtube.com/results?search_query=%EA%B8%B0%EB%B6%84+%EC%95%88%EC%A2%8B%EC%9D%84%EB%95%8C+%EB%93%A3%EB%8A%94+%EB%85%B8%EB%9E%98"
+    
     if(predictions > 0.7):
         print("{:.2f}% 확률로 긍정 리뷰입니다.\n".format(predictions * 100))
-        return "https://www.youtube.com/results?search_query=%EA%B8%B0%EB%B6%84%EC%A2%8B%EC%9D%80+%EB%85%B8%EB%9E%98"
+        return emogoodurl
     else:
         print("{:.2f}% 확률로 부정 리뷰입니다.\n".format((1 - predictions) * 100))
-        return round(predictions * 100, 2)
+        return emobadurl
+
 
 # Create your views here.
 def index(request):
@@ -60,4 +64,3 @@ def index(request):
         return redirect(result)
     else:
         return render(request, 'index.html')
-        # https://www.youtube.com/results?search_query=%EA%B8%B0%EB%B6%84%EC%A2%8B%EC%9D%80+%EB%85%B8%EB%9E%98
